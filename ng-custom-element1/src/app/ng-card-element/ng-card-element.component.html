@@ -1,0 +1,50 @@
+<div class="card">
+  <div class="header">
+    <img [src]="avtar" class="img" alt="" />
+    <div class="title">
+      <span class="head">
+        <span class="name">
+          {{ name }}
+        </span>
+        <span class="option">
+          <i class="fa fa-ellipsis-h"></i>
+        </span>
+      </span>
+      <span class="desc">
+        {{ time | date: 'medium' }}
+      </span>
+    </div>
+  </div>
+  <div class="body">
+    <p>
+      {{ caption }}
+    </p>
+    <img [src]="image" class="post-img" alt="" />
+  </div>
+  <div class="footer">
+    <div class="icon">
+      <a (click)="likeEvent()" class="like">
+        <ng-content select="[icon-like]"></ng-content>
+        <span class="text">
+          Like
+        </span>
+      </a>
+    </div>
+    <div class="icon">
+      <a (click)="commentEvent()">
+        <ng-content select="[icon-comment]"></ng-content>
+        <span class="text">
+          Comment
+        </span>
+      </a>
+    </div>
+    <div class="icon">
+      <a (click)="shareEvent()">
+        <ng-content select="[icon-share]"></ng-content>
+        <span class="text">
+          Share
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
